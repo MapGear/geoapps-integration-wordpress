@@ -1,0 +1,38 @@
+.geoapps-map {
+	position: relative;
+	background-color: #fff;
+}
+.geoapps-controls {
+	position: absolute;
+	top: 25px;
+	right: 25px;
+	pointer-events: none;
+	z-index: 11;
+}
+.geoapps-controls .control {
+	pointer-events: auto;
+	margin: 0 0 10px;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(82, 82, 82, 0.7);
+	cursor: pointer;
+	color: #fff;
+	font-size: 18px;
+}
+.geoapps-controls .control:hover {
+	background-color: #525252;
+}
+.geoapps-controls .control svg {
+	width: 20px;
+	height: 20px;
+	fill: #fff;
+}
+.geoapps-overlay-container {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color: #fff;
+	box-shadow: 2px 2px 3px #999;
+}
