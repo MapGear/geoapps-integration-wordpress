@@ -1,10 +1,12 @@
 === Geoapps ===
-Contributors:      MapGear B.V.
-Tags:              map, geoapps, app
-Tested up to:      5.8.0
-Stable tag:        1.0.0
-License:           ISV
-License URI:       
+Contributors:       mapgear
+Tags:               map,geoapps,location
+Tested up to:       5.8.2
+Requires at least:  5.8.0
+Requires PHP:       5.6.0
+Stable tag:         1.0.0
+License:            GPLv2
+License URI:        https://www.gnu.org/licenses/gpl-2.0.html
 
 Embed a GeoApps map with ease in your Wordpress website
 

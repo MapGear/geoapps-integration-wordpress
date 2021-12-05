@@ -18,7 +18,7 @@ import './style.scss';
  * Internal dependencies
  */
 import Edit from './edit';
-import icons from "./icons";
+import icons from './icons';
 
 /**
  * Every block starts by registering a new block type definition.
@@ -26,7 +26,6 @@ import icons from "./icons";
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 registerBlockType('mapgear/geoapps', {
-
 	icon: icons.geoapps,
 	edit: Edit,
 });

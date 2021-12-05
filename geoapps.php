@@ -6,11 +6,11 @@
  * Requires PHP:      7.0
  * Version:           0.1.0
  * Author:            MapGear B.V.
- * License:           ISV
- * License URI:       
+ * License:           GPLv2
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       geoapps
  *
- * @package           create-block
+ * @package           geoapps
  */
 
 /**
@@ -20,15 +20,15 @@
  *
  * @see https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/writing-your-first-block-type/
  */
-function createGeoAppsBlock() {
+function create_geoapps_block() {
 	wp_enqueue_script(
         'geoapps-script',
-        "https://demo.geoapps.nl/scripts/geoapps/v1/geoapps.min.js",
+        "https://mapgear.geoapps.nl/scripts/geoapps/v1/geoapps.min.js",
         array()
     );
     wp_enqueue_style(
         'geoapps-style',
-        "https://demo.geoapps.nl/scripts/geoapps/v1/geoapps.min.css",
+        "https://mapgear.geoapps.nl/scripts/geoapps/v1/geoapps.min.css",
         array()
     );
 
@@ -36,9 +36,14 @@ function createGeoAppsBlock() {
         "render_callback" => "render_map_block",
     ));
 }
-add_action( 'init', 'createGeoAppsBlock' );
+add_action( 'init', 'create_geoapps_block' );
 
-
+/**
+ * Implement the frontend rendering for this block. It generates a div, configured with the styling
+ * properties. After that, it initialized the map object into this specific div through the GeoApps API
+ * 
+ * Details of the GeoApps API can be found at: https://docs.geoapps.dev/
+ */
 function render_map_block($settings) {
     $id = uniqid('mv_');
 
@@ -57,3 +62,19 @@ function render_map_block($settings) {
 
     return $output;
 }
+
+/**
+ * Configure a new block category, specific for GeoApps
+ */
+function geoapps_block_category( $categories ) {
+	return array_merge(
+		$categories,
+		[
+			[
+				'slug'  => 'geoapps',
+				'title' => __( 'GeoApps', 'geoapps' ),
+			],
+		]
+	);
+}
+add_action( 'block_categories', 'geoapps_block_category', 10, 2 );

@@ -38,13 +38,12 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		loadMap();
 	}, []);
 
-	const domId = "mv_" + clientId;
+	const domId = 'mv_' + clientId;
 	console.log(domId);
 
 	const loadMap = () => {
-
 		// Clear map
-		document.getElementById(domId).innerHTML = "";
+		document.getElementById(domId).innerHTML = '';
 		geoapps.RemoveMap(domId);
 
 		// Initialize new map
@@ -53,7 +52,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		if (map) {
 			map.Controls.AddZoomControls();
 		}
-	}
+	};
 
 	const onChangeTenantUrl = (tenantUrl) => {
 		setTenantUrl(tenantUrl);
@@ -77,17 +76,42 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 	return (
 		<div {...useBlockProps()}>
 			<InspectorControls key="settings">
-				<PanelBody title={"Settings"}>
-					<TextControl value={tenantUrl} label="Tenant Url" onChange={onChangeTenantUrl} />
-					<TextControl value={mapId} label="Map Id" onChange={onChangeMapId} />
-					<Button onClick={onConnect} isPrimary={true}>Connect</Button>
+				<PanelBody title={'Settings'}>
+					<TextControl
+						value={tenantUrl}
+						label="Tenant Url"
+						onChange={onChangeTenantUrl}
+					/>
+					<TextControl
+						value={mapId}
+						label="Map Id"
+						onChange={onChangeMapId}
+					/>
+					<Button onClick={onConnect} isPrimary={true}>
+						Connect
+					</Button>
 				</PanelBody>
-				<PanelBody title={"Dimensions"}>
-					<TextControl value={attributes.width} label="Width" onChange={onChangeWidth} />
-					<TextControl value={attributes.height} label="Height" onChange={onChangeHeight} />
+				<PanelBody title={'Dimensions'}>
+					<TextControl
+						value={attributes.width}
+						label="Width"
+						onChange={onChangeWidth}
+					/>
+					<TextControl
+						value={attributes.height}
+						label="Height"
+						onChange={onChangeHeight}
+					/>
 				</PanelBody>
 			</InspectorControls>
-			<div style={{ width: attributes.width, height: attributes.height, border: "1px solid black" }} id={domId}></div>
+			<div
+				style={{
+					width: attributes.width,
+					height: attributes.height,
+					border: '1px solid black',
+				}}
+				id={domId}
+			></div>
 		</div>
 	);
 }
