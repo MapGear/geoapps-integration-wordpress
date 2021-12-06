@@ -39,9 +39,8 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 	}, []);
 
 	const domId = 'mv_' + clientId;
-	console.log(domId);
-
 	const loadMap = () => {
+
 		// Clear map
 		document.getElementById(domId).innerHTML = '';
 		geoapps.RemoveMap(domId);

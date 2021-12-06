@@ -25,7 +25,7 @@ import icons from './icons';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType('mapgear/geoapps', {
+registerBlockType('mapgear/geoapps-map', {
 	icon: icons.geoapps,
 	edit: Edit,
 });
