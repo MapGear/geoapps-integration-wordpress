@@ -40,16 +40,18 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 
 	const domId = 'mv_' + clientId;
 	const loadMap = () => {
-
 		// Clear map
 		document.getElementById(domId).innerHTML = '';
 		geoapps.RemoveMap(domId);
 
-		// Initialize new map
-		geoapps.Initialize(tenantUrl);
-		var map = geoapps.AddMap(domId, mapId);
-		if (map) {
-			map.Controls.AddZoomControls();
+		// Verify if tenant Url is set, otherwise do nothing
+		if (tenantUrl) {
+			// Initialize new map
+			geoapps.Initialize(tenantUrl);
+			var map = geoapps.AddMap(domId, mapId);
+			if (map) {
+				map.Controls.AddZoomControls();
+			}
 		}
 	};
 

@@ -20,7 +20,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/writing-your-first-block-type/
  */
-function create_geoapps_block() {
+function geoapps_create_map_block() {
 	wp_enqueue_script(
         'geoapps-script',
         "https://mapgear.geoapps.nl/scripts/geoapps/v1/geoapps.min.js",
@@ -33,10 +33,10 @@ function create_geoapps_block() {
     );
 
 	register_block_type(__DIR__, array(
-        "render_callback" => "render_map_block",
+        "render_callback" => "geoapps_render_map_block",
     ));
 }
-add_action( 'init', 'create_geoapps_block' );
+add_action( 'init', 'geoapps_create_map_block' );
 
 /**
  * Implement the frontend rendering for this block. It generates a div, configured with the styling
@@ -44,7 +44,7 @@ add_action( 'init', 'create_geoapps_block' );
  * 
  * Details of the GeoApps API can be found at: https://docs.geoapps.dev/
  */
-function render_map_block($settings) {
+function geoapps_render_map_block($settings) {
     $id = uniqid('mv_');
 
     $output = "";
@@ -64,7 +64,9 @@ function render_map_block($settings) {
 }
 
 /**
- * Configure a new block category, specific for GeoApps
+ * Configure a new block category, specific for GeoApps. This shows up in the
+ * Gutenberg editor when creating a new page or post, so the block(s) provided
+ * through this plugin are clearly distuingished.
  */
 function geoapps_block_category( $categories ) {
 	return array_merge(
