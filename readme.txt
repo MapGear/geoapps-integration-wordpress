@@ -35,7 +35,7 @@ private are currently not supported in this plugin.
 = I am missing some features
 
 Please let us know which features you are missing by using this plugin. You can provide us with feedback by leaving a comment,
-add the requested feature on feedback.geoapps.nl or send an email to support@mapgear.nl.
+add the requested feature on feedback.geoapps.nl or send an email to support@geoapps.nl.
 
 == Screenshots ==
 
