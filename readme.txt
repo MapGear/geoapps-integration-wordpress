@@ -4,7 +4,7 @@ Tags:               map,geoapps,location
 Tested up to:       5.8.2
 Requires at least:  5.8.0
 Requires PHP:       5.6.0
-Stable tag:         1.0.0
+Stable tag:         1.1.0
 License:            GPLv2
 License URI:        https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,9 @@ add the requested feature on feedback.geoapps.nl or send an email to support@geo
 1. A configured GeoApps-block with the map properties that can be configured
 
 == Changelog ==
+
+= 1.1.0 =
+* Fix the plugin to show up in the plugins panel
 
 = 1.0.0 =
 * Initial release
