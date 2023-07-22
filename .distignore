@@ -1,8 +1,16 @@
 /.wordpress-org
+/assets
 /.git
 /.github
 /node_modules
+/src
 /.vscode
+
 
 .distignore
 .gitignore
+.gitattributes
+.editorconfig
+.wp-env.json
+package-lock.json
+package.json
