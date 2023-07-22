@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": "file:///Users/woutergoedhart/Workspaces/geoapps-wordpress/plugin/geoapps/.github/workflows/deploy.yaml"
+    }
+}
