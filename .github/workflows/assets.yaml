@@ -16,3 +16,4 @@ jobs:
         SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
         SLUG: geoapps
         ASSETS_DIR: assets
+        IGNORE_OTHER_FILES: true
