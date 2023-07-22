@@ -1,7 +1,7 @@
 === GeoApps ===
 Contributors:       mapgear
 Tags:               map,geoapps,location
-Tested up to:       5.8.2
+Tested up to:       6.2.2
 Requires at least:  5.8.0
 Requires PHP:       5.6.0
 Stable tag:         1.1.0
