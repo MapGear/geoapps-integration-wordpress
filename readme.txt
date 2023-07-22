@@ -1,4 +1,4 @@
-=== Geoapps ===
+=== GeoApps ===
 Contributors:       mapgear
 Tags:               map,geoapps,location
 Tested up to:       5.8.2
